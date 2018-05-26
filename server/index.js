@@ -3,6 +3,11 @@ const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 const { makeExecutableSchema } = require('graphql-tools');
 
+const { PubSub } = require('graphql-subscriptions');
+
+const pubsub = new PubSub();
+const NOTIFICATION_SUBSCRIPTION_TOPIC = 'newNotifications';
+
 const notifications = [];
 const typeDefs = `
   type Query { notifications: [Notification] }
@@ -16,8 +21,15 @@ const resolvers = {
       const newNotification = { label: args.label };
       notifications.push(newNotification);
 
+      pubsub.publish(NOTIFICATION_SUBSCRIPTION_TOPIC, { newNotification });
+
       return newNotification;
     },
+  },
+  Subscription: {
+    newNotification: {
+      subscribe: () => pubsub.asyncIterator(NOTIFICATION_SUBSCRIPTION_TOPIC)
+    }
   },
 };
 const schema = makeExecutableSchema({ typeDefs, resolvers });
