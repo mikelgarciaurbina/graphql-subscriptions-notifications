@@ -1,0 +1,25 @@
+{
+  "name": "graphql-subscriptions-notifications",
+  "version": "1.0.0",
+  "description": "Real-time Notification System With GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikelgarciaurbina/graphql-subscriptions-notifications.git"
+  },
+  "keywords": [
+    "graphql",
+    "subscriptions",
+    "apollo",
+    "notifications"
+  ],
+  "author": "Mikel Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikelgarciaurbina/graphql-subscriptions-notifications/issues"
+  },
+  "homepage": "https://github.com/mikelgarciaurbina/graphql-subscriptions-notifications#readme"
+}
