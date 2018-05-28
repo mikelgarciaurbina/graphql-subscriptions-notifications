@@ -10,7 +10,8 @@
     "react-apollo": "^2.1.4",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4",
-    "react-toastify": "^4.0.1"
+    "react-toastify": "^4.0.1",
+    "subscriptions-transport-ws": "^0.9.9"
   },
   "scripts": {
     "start": "react-scripts start",
